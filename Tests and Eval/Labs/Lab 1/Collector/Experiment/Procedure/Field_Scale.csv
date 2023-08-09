@@ -1,0 +1,29 @@
+Item,Trial Type,Max Time,Min Time,Text,Procedure Notes,Shuffle,Settings
+0,Instruct,-,5,"In this section, you will be presented with a series of statements. Please indicate as HONESTLY AS POSSIBLE the degree to which each statement describes yourself.  You will make your ratings using a 1 - 5 scale. (1 = STRONGLY DISSAGREE; 5 = STRONGLY AGREE). Click ""Next"" to continue.",,INS1,
+0,Instruct,-,3,"You will now begin the assessment. When you are ready to start, please click ""Next.""",,INS3,
+0,Likert,User,3,"Please select ""3"" for this question| Strongly Disagree | Strongly Agree",Manip_check,SM,1::5
+0,Likert,User,3,"Please select ""4"" for this question| Strongly Disagree | Strongly Agree",Manip_check,SM,1::5
+0,Likert,User,3,I have little experience with computers. | Strongly Disagree | Strongly Agree,Recall,SM,1::5
+0,Likert,User,3,SPSS always crashes when I try to use it. | Strongly Disagree | Strongly Agree,Recall,SM,1::5
+0,Likert,User,3,I worry that I will cause irreparable damage because of my incompetence with computers. | Strongly Disagree | Strongly Agree,Recall,SM,1::5
+0,Likert,User,3,All computers hate me.| Strongly Disagree | Strongly Agree,Recall,SM,1::5
+0,Likert,User,3,Computers have minds of their own and deliberately go wrong whenever I use them. | Strongly Disagree | Strongly Agree,Recall,SM,1::5
+0,Likert,User,3,Computers are only useful for playing games.| Strongly Disagree | Strongly Agree,Recall,SM,1::5
+0,Likert,User,3,Computers are out to get me. | Strongly Disagree | Strongly Agree,Recall,SM,1::5
+0,Likert,User,3,I can’t sleep at night due to thoughts of t-tests. | Strongly Disagree | Strongly Agree,Recall,SM,1::5
+0,Likert,User,3,At night I wake up under my blanket thinking that I am trapped under a normal distribution. | Strongly Disagree | Strongly Agree,Recall,SM,1::5
+0,Likert,User,3,Standard deviations excite me. | Strongly Disagree | Strongly Agree,Recall,SM,1::5
+0,Likert,User,3,I dream that Pearson is attacking me with correlation coefficients. | Strongly Disagree | Strongly Agree,Recall,SM,1::5
+0,Likert,User,3,People try to tell you that SPSS makes statistics easier to understand but those people are liars. | Strongly Disagree | Strongly Agree,Recall,SM,1::5
+0,Likert,User,3,Statistics makes me cry. | Strongly Disagree | Strongly Agree,Recall,SM,1::5
+0,Likert,User,3,I don’t understand statistics. | Strongly Disagree | Strongly Agree,Recall,SM,1::5
+0,Likert,User,3,I have never been good at math. | Strongly Disagree | Strongly Agree,Recall,SM,1::5
+0,Likert,User,3,I did poorly at math in school. | Strongly Disagree | Strongly Agree,Recall,SM,1::5
+0,Likert,User,3,I slip into a coma whenever I see an equation. | Strongly Disagree | Strongly Agree,Recall,SM,1::5
+0,Likert,User,3,My friends are better at statistics than me. | Strongly Disagree | Strongly Agree,Recall,SM,1::5
+0,Likert,User,3,My classmates are better with SPSS than me. | Strongly Disagree | Strongly Agree,Recall,SM,1::5
+0,Likert,User,3,If I’m good at statistics my friends will think I am a nerd. | Strongly Disagree | Strongly Agree,Recall,SM,1::5
+0,Likert,User,3,My friends will think I’m stupid for not being able to use SPSS. | Strongly Disagree | Strongly Agree,Recall,SM,1::5
+0,Likert,User,3,I weep openly at the mention of z scores. | Strongly Disagree | Strongly Agree,Recall,SM,1::5
+0,Instruct,User,1,You have completed this section. Please click the next button to continue.,,Instruct333,
+0,Instruct,User,-,"The following screen will ask you a few questions about your experience today. Click ""Next"" to continue.",,Instruct8,
