@@ -1,4 +1,4 @@
-ID,sex,sat_v,sat_m,sat_sum,hs_gpa,fy_gpa
+ID,Gender,sat_v,sat_m,sat_sum,hs_gpa,fy_gpa
 1,1,65,62,127,3.4,3.18
 2,2,58,64,122,4,3.33
 3,2,56,60,116,3.75,3.25
