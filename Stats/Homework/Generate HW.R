@@ -109,3 +109,238 @@ df <- data.frame(
 # Write to CSV
 #write.csv(df, "HW 4.csv", row.names = FALSE)
 
+####HW 5####
+set.seed(2025)  # for reproducibility
+
+# Generate mostly normal data
+n <- 34
+pre_scores <- rnorm(n - 1, mean = 72, sd = 8)
+post_scores <- pre_scores + rnorm(n - 1, mean = 1.5, sd = 6)  # Small mean change
+
+# Add 1 extreme outlier to each variable
+pre_outlier <- 40    # Extremely low pre-training score
+post_outlier <- 98   # Extremely high post-training score
+
+# Combine scores
+Pre_Accuracy <- c(pre_scores, pre_outlier)
+Post_Accuracy <- c(post_scores, post_outlier)
+ID <- 1:n
+
+# Create data frame
+df <- data.frame(ID, Pre_Accuracy, Post_Accuracy)
+
+# Save as CSV
+#write.csv(df, "HW 5.csv", row.names = FALSE)
+
+# Check t-test to confirm it's non-significant
+#t.test(df$Pre_Accuracy, df$Post_Accuracy, paired = TRUE)
+
+####HW 6####
+set.seed(123)  # For reproducibility
+
+# Sample sizes
+n <- 30
+
+# Simulated group means and standard deviations
+lecture_scores <- rnorm(n, mean = 12, sd = 2.5)
+discussion_scores <- rnorm(n, mean = 14, sd = 2.5)
+interactive_scores <- rnorm(n, mean = 16, sd = 2.5)
+
+# Introduce one outlier in the discussion group
+discussion_scores[5] <- 4  # Obvious outlier
+
+# Combine into a dataframe
+Test_Score <- c(lecture_scores, discussion_scores, interactive_scores)
+Instruction_Method <- factor(rep(c("Lecture", "Discussion", "Interactive"), each = n))
+ID <- 1:90
+
+# Add age and gender for realism
+Age <- round(rnorm(90, mean = 21, sd = 2))  # Age 18–25 typical
+Gender <- sample(c("Male", "Female", "Other"), 90, replace = TRUE, prob = c(0.45, 0.45, 0.1))
+
+# Create the data frame
+data <- data.frame(
+  ID = ID,
+  Age = Age,
+  Gender = Gender,
+  Instruction_Method = Instruction_Method,
+  Test_Score = round(Test_Score)  # Scores out of 20, rounded
+)
+
+# Cap scores at 0 and 20 to simulate test boundaries
+data$Test_Score <- pmin(pmax(data$Test_Score, 0), 20)
+
+
+#write.csv(data, "HW 6.csv", row.names = FALSE)
+
+options(scipen = 999)
+
+library(ez)
+library(reshape)
+
+ezANOVA(data, wid = ID,
+        between = Instruction_Method,
+        dv = Test_Score,
+        type = 3,
+        detailed = T)
+
+dat.wide = cast(data, ID ~ Instruction_Method, mean)
+
+t.test(dat.wide$Interactive, dat.wide$Lecture, paired = F, var.equal = T)
+t.test(dat.wide$Interactive, dat.wide$Discussion, paired = F, var.equal = T)
+t.test(dat.wide$Discussion, dat.wide$Lecture, paired = F, var.equal = T)
+
+####HW 7####
+set.seed(123)
+
+# Number of participants
+n <- 60
+
+# Participant IDs
+ID <- 1:n
+
+# Demographics
+Age <- round(rnorm(n, mean = 25, sd = 4))  # Random ages around 25
+Gender <- sample(c("Male", "Female", "Other"), size = n, replace = TRUE, prob = c(0.45, 0.45, 0.1))
+
+# Simulate scores with decreasing means and some overlap
+Score_A <- round(rnorm(n, mean = 85, sd = 5))  # Well-rested
+Score_B <- round(rnorm(n, mean = 75, sd = 6))  # Moderate deprivation
+Score_C <- round(rnorm(n, mean = 65, sd = 6))  # Severe deprivation
+
+# Add one outlier to Score_B and Score_C
+outlier_index <- sample(1:n, 1)
+Score_B[outlier_index] <- Score_B[outlier_index] + 25  # High outlier in B
+Score_C[outlier_index] <- Score_C[outlier_index] + 25  # High outlier in C
+
+# Assemble into a data frame
+df <- data.frame(
+  ID = ID,
+  Age = Age,
+  Gender = Gender,
+  Score_A = Score_A,
+  Score_B = Score_B,
+  Score_C = Score_C
+)
+
+# Save to CSV
+#write.csv(df, "HW 7.csv", row.names = FALSE)
+
+####HW 8####
+set.seed(42)
+n <- 120
+
+# Generate IDs
+ID <- 1:n
+
+# Generate categorical variables
+majors <- c("Biology", "Psychology", "Engineering", "English", "Business")
+genders <- c("Male", "Female", "Nonbinary")
+Major <- sample(majors, n, replace = TRUE)
+Gender <- sample(genders, n, replace = TRUE)
+Age <- round(rnorm(n, mean = 20, sd = 2))
+
+# Generate GPA
+GPA <- pmin(pmax(rnorm(n, mean = 3.0, sd = 0.5), 0.0), 4.0)
+
+# Strong positive correlation: Self_Efficacy_Score
+Self_Efficacy_Score <- pmin(pmax(GPA * 2 + rnorm(n, 0, 1), 1), 10)
+
+# Moderate negative correlation: Test_Anxiety_Score
+Test_Anxiety_Score <- pmin(pmax(10 - GPA * 1.5 + rnorm(n, 0, 1.5), 1), 10)
+
+# Weak positive correlation: Working_Memory_Score
+Working_Memory_Score <- pmin(pmax(GPA * 5 + rnorm(n, 0, 10), 20), 100)
+
+# Introduce outliers
+GPA[6] <- 0.5                 # unusually low GPA
+GPA[26] <- 4.3                # invalid high GPA
+Self_Efficacy_Score[26] <- 12 # invalid high efficacy
+
+# Introduce missing values
+Working_Memory_Score[11] <- NA
+Test_Anxiety_Score[16] <- NA
+
+# Create dataframe
+df <- data.frame(
+  ID,
+  Major,
+  Gender,
+  Age,
+  GPA,
+  Working_Memory_Score,
+  Test_Anxiety_Score,
+  Self_Efficacy_Score
+)
+
+# Preview
+head(df)
+
+#Save to CSV
+#write.csv(df, "HW 8.csv", row.names = FALSE)
+
+####HW 9####
+set.seed(123)  # for reproducibility
+
+n <- 75
+
+# Generate variables
+ID <- 1:n
+Gender <- rbinom(n, 1, 0.5)  # roughly equal males/females
+
+Workload <- round(rnorm(n, mean = 40, sd = 10))
+Workload <- pmax(Workload, 20)  # minimum 20 hrs
+
+Autonomy <- round(runif(n, 1, 10))
+Recognition <- round(rnorm(n, mean = 5, sd = 3))
+Recognition <- pmax(Recognition, 0)  # no negatives
+
+Stress <- round(runif(n, 1, 10))
+Job_Satisfaction <- round(runif(n, 1, 10))
+
+# Create Motivation based on predictors with noise
+# Strong positive: Job_Satisfaction (+7)
+# Strong negative: Stress (-6)
+# Moderate positive: Autonomy (+3)
+# Moderate positive: Recognition (+2)
+# Moderate negative: Workload (-1.5)
+# Gender effect = 0 (non-significant)
+
+motivation_true <- 30 + 
+  7 * Job_Satisfaction - 
+  6 * Stress + 
+  3 * Autonomy + 
+  2 * Recognition - 
+  1.5 * Workload + 
+  rnorm(n, 0, 5)  # some noise
+
+# Bound motivation between 0 and 100
+Motivation <- pmin(pmax(round(motivation_true), 0), 100)
+
+# Insert outlier at participant 13 (extreme Motivation)
+Motivation[13] <- 150  # extreme outlier
+
+# Insert missing data for participants 10, 25, 47
+# Let's randomly assign missingness in different variables
+Autonomy[c(10, 47)] <- NA
+Recognition[25] <- NA
+Stress[47] <- NA
+
+# Compile dataframe
+df <- data.frame(
+  ID,
+  Workload,
+  Autonomy,
+  Recognition,
+  Stress,
+  Job_Satisfaction,
+  Gender,
+  Motivation
+)
+
+# View first few rows
+head(df)
+
+# Optionally write to CSV:
+#write.csv(df, "HW 9.csv", row.names = FALSE)
+
