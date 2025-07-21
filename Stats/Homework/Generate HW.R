@@ -344,3 +344,54 @@ head(df)
 # Optionally write to CSV:
 #write.csv(df, "HW 9.csv", row.names = FALSE)
 
+####HW 10####
+# Load libraries
+library(MASS)  # For mvrnorm
+library(psych) # For EFA tools
+set.seed(42)
+
+# Parameters
+n_participants <- 100
+n_items <- 12
+
+# Define latent correlation (moderately correlated factors)
+latent_cor <- matrix(c(1, 0.3,
+                       0.3, 1), nrow = 2)
+
+# Simulate 2 latent traits: 
+# - Factor 1 = Motivation + Self-Efficacy
+# - Factor 2 = Anxiety
+latent_traits <- mvrnorm(n_participants, mu = c(0, 0), Sigma = latent_cor)
+
+# Create factor loading structure:
+# Items 1–4: Motivation
+# Items 5–8: Anxiety
+# Items 9–12: Self-Efficacy
+# But Motivation & Self-Efficacy will load on the same latent factor
+
+loadings <- matrix(0, nrow = n_items, ncol = 2)
+
+# Factor 1 (Motivation + Self-Efficacy)
+loadings[1:4, 1] <- runif(4, 0.6, 0.9)   # Motivation items
+loadings[9:12, 1] <- runif(4, 0.6, 0.9)  # Self-Efficacy items
+
+# Factor 2 (Anxiety)
+loadings[5:8, 2] <- runif(4, 0.6, 0.9)   # Anxiety items
+
+# Simulate responses
+noise <- matrix(rnorm(n_participants * n_items, mean = 0, sd = 0.3), nrow = n_participants)
+responses <- latent_traits %*% t(loadings) + noise
+
+# Convert to 5-point Likert scale (1–5)
+responses_likert <- round(pnorm(responses) * 4 + 1)
+responses_likert <- pmin(pmax(responses_likert, 1), 5)  # Bound between 1 and 5
+
+# Add item names
+item_names <- c("AMI1", "AMI2", "AMI3", "AMI4",   # Motivation
+                "AMI5", "AMI6", "AMI7", "AMI8",   # Anxiety
+                "AMI9", "AMI10", "AMI11", "AMI12")  # Self-Efficacy
+data <- as.data.frame(responses_likert)
+colnames(data) <- item_names
+
+#Write to CSV
+#write.csv(data, "HW 10.csv", row.names = FALSE)
