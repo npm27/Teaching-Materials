@@ -1,4 +1,4 @@
-"ID","Workload","Autonomy","Recognition","Stress","Job_Satisfaction","Gender","Motivation"
+ID,Study_Hours,Sleep_Quality,Social_Support,Stress,Academic_Satisfaction,Gender,Wellbeing
 1,32,5,7,6,7,0,20
 2,43,5,7,4,9,1,30
 3,28,6,6,3,1,0,2
