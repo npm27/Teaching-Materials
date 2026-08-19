@@ -1,0 +1,91 @@
+ID,Age_Group,Employment,Recidivism,Completed_Program,Prior_Offenses
+1,Adult,Employed,No,Yes,Yes
+2,Young Adult,Employed,No,No,No
+3,Middle-Aged,Unemployed,Yes,No,Yes
+4,Adult,Unemployed,No,Yes,Yes
+5,Young Adult,Unemployed,Yes,No,No
+6,Young Adult,Unemployed,Yes,Yes,Yes
+7,Young Adult,Employed,No,Yes,Yes
+8,Young Adult,Unemployed,No,Yes,Yes
+9,Middle-Aged,Employed,No,Yes,No
+10,Middle-Aged,Unemployed,Yes,Yes,Yes
+11,Adult,Employed,No,Yes,Yes
+12,Young Adult,Employed,Yes,No,No
+13,Young Adult,Unemployed,Yes,No,No
+14,Young Adult,Employed,No,No,Yes
+15,Middle-Aged,Unemployed,No,Yes,Yes
+16,Young Adult,Employed,No,No,Yes
+17,Young Adult,Unemployed,Yes,No,Yes
+18,Adult,Employed,No,Yes,Yes
+19,Adult,Employed,No,Yes,Yes
+20,Adult,Unemployed,Yes,No,Yes
+21,Young Adult,Employed,Yes,No,No
+22,Adult,Employed,No,Yes,No
+23,Young Adult,Unemployed,No,Yes,No
+24,Middle-Aged,Unemployed,Yes,No,No
+25,Adult,Employed,No,Yes,Yes
+26,Middle-Aged,Unemployed,No,Yes,No
+27,Adult,Employed,No,No,No
+28,Young Adult,Employed,No,Yes,No
+29,Middle-Aged,Unemployed,Yes,No,Yes
+30,Young Adult,Unemployed,No,No,Yes
+31,Middle-Aged,Unemployed,No,Yes,Yes
+32,Middle-Aged,Employed,No,Yes,Yes
+33,Young Adult,Unemployed,Yes,No,No
+34,Middle-Aged,Unemployed,Yes,No,No
+35,Adult,Employed,No,Yes,No
+36,Middle-Aged,Unemployed,No,Yes,Yes
+37,Middle-Aged,Employed,Yes,No,No
+38,Young Adult,Employed,No,Yes,No
+39,Middle-Aged,Unemployed,Yes,Yes,No
+40,Adult,Employed,Yes,Yes,Yes
+41,Young Adult,Unemployed,No,No,Yes
+42,Middle-Aged,Unemployed,Yes,Yes,Yes
+43,Middle-Aged,Unemployed,No,Yes,No
+44,Adult,Unemployed,No,No,No
+45,Young Adult,Unemployed,No,Yes,Yes
+46,Adult,Employed,No,Yes,No
+47,Adult,Unemployed,No,Yes,Yes
+48,Middle-Aged,Unemployed,Yes,Yes,Yes
+49,Middle-Aged,Unemployed,Yes,No,No
+50,Adult,Employed,Yes,No,Yes
+51,Middle-Aged,Employed,No,Yes,No
+52,Middle-Aged,Employed,No,Yes,No
+53,Young Adult,Unemployed,No,Yes,Yes
+54,Middle-Aged,Unemployed,Yes,No,No
+55,Middle-Aged,Unemployed,No,Yes,No
+56,Adult,Unemployed,Yes,No,No
+57,Young Adult,Unemployed,No,No,Yes
+58,Adult,Unemployed,No,No,No
+59,Middle-Aged,Employed,No,No,Yes
+60,Young Adult,Unemployed,No,No,Yes
+61,Adult,Unemployed,No,Yes,No
+62,Young Adult,Unemployed,No,No,Yes
+63,Young Adult,Unemployed,No,Yes,Yes
+64,Middle-Aged,Employed,No,Yes,No
+65,Young Adult,Employed,Yes,Yes,Yes
+66,Middle-Aged,Employed,No,Yes,Yes
+67,Middle-Aged,Unemployed,No,Yes,Yes
+68,Young Adult,Employed,No,Yes,No
+69,Adult,Employed,No,No,Yes
+70,Young Adult,Unemployed,Yes,No,Yes
+71,Adult,Employed,No,Yes,Yes
+72,Adult,Employed,No,Yes,Yes
+73,Middle-Aged,Employed,No,Yes,No
+74,Young Adult,Unemployed,Yes,No,No
+75,Young Adult,Employed,No,Yes,No
+76,Adult,Employed,No,No,No
+77,Middle-Aged,Employed,Yes,Yes,No
+78,Adult,Unemployed,Yes,Yes,No
+79,Adult,Unemployed,Yes,No,No
+80,Adult,Employed,Yes,No,Yes
+81,Adult,Unemployed,No,Yes,No
+82,Young Adult,Unemployed,Yes,No,Yes
+83,Adult,Unemployed,Yes,Yes,No
+84,Adult,Employed,No,No,Yes
+85,Adult,Unemployed,No,Yes,Yes
+86,Young Adult,Employed,Yes,Yes,No
+87,Young Adult,Unemployed,Yes,No,Yes
+88,Middle-Aged,Employed,No,No,No
+89,Middle-Aged,Employed,No,No,Yes
+90,Young Adult,Employed,Yes,Yes,No
